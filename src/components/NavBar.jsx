@@ -1,15 +1,15 @@
-import "./NavBar.css"
+import { Link } from "react-router-dom"
 
 function NavBar() {
   return (
     <>
         <header>
             <div className='nav-bar'>
-                <div className='brand'>E-CART</div>
+                <Link to={"/"} className='brand'>E-CART</Link>
                 <div className='search-box'>
                     <input type='text' placeholder='Enter your product'/>
                 </div>
-                <div className='cart'>Cart</div>
+                <Link to={"/cart"} className='cart'>Cart</Link>
             </div>
 
             <div className="nav-bar-wrapper">
