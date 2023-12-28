@@ -1,8 +1,18 @@
-# React + Vite
+# Project- ELECTRONIC_ECOMMERCE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## This is created by me.(Mo Ansar Mansoorie)
 
-Currently, two official plugins are available:
+<!-- ![badge](https://img.shields.io/badge/Project-Shopify%20Clone-yellow) -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Link of live project for view](https://electronic-ecom.netlify.app/)
+
+<!-- ![View page](./landingpage.png) -->
+
+# What I learned from this project.
+
+- This project is the electronic ecommerce.
+- It is helpful to the practice of real time project.
+
+# Howmany Time will be consumed to making this project.
+
+- This project have taken 3 hours to complete this project.
