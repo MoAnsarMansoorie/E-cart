@@ -1,27 +1,79 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { items } from "./Data"
+import { useState } from "react"
 
-function NavBar() {
+function NavBar({setData}) {
+    const navigate = useNavigate()
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const filterByCategory =  (category) => {
+        const element = items.filter((product) => product.category == category)
+        // console.log(element);
+        setData(element)
+    }
+
+    const filterByPrice = (price) => {
+        const element = items.filter((product) => product.price >= price)
+        console.log(element);
+        setData(element)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        navigate(`/search/${searchTerm}`)
+    }
+
   return (
     <>
-        <header>
+        <header className="sticky-top">
             <div className='nav-bar'>
                 <Link to={"/"} className='brand'>E-CART</Link>
-                <div className='search-box'>
-                    <input type='text' placeholder='Enter your product'/>
-                </div>
+                <form 
+                className='search-box'
+                onSubmit={handleSubmit}
+                >
+                    <input 
+                    type='text' 
+                    placeholder='Enter your product'
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </form>
                 <Link to={"/cart"} className='cart'>Cart</Link>
             </div>
 
             <div className="nav-bar-wrapper">
                 <div className="item">Filter by {"->"}</div>
-                <div className="item">No Filter</div>
-                <div className="item">Mobiles</div>
-                <div className="item">Laptops</div>
-                <div className="item">Tablets</div>
-                <div className="item">{">="}29999</div>
-                <div className="item">{">="}49999</div>
-                <div className="item">{">="}69999</div>
-                <div className="item">{">="}89999</div>
+                <div 
+                className="item"
+                onClick={() => setData(items)}
+                >No Filter</div>
+                <div 
+                className="item"
+                onClick={() => filterByCategory("mobiles")}
+                >Mobiles</div>
+                <div 
+                className="item"
+                onClick={() => filterByCategory("laptops")}
+                >Laptops</div>
+                <div 
+                className="item"
+                onClick={() => filterByCategory("tablets")}
+                >Tablets</div>
+
+                <div 
+                className="item"
+                onClick={() => filterByPrice(29999)}
+                >{">="}29999</div>
+                <div 
+                onClick={() => filterByPrice(49999)}
+                className="item">{">="}49999</div>
+                <div 
+                onClick={() => filterByPrice(69999)}
+                className="item">{">="}69999</div>
+                <div 
+                onClick={() => filterByPrice(89999)}
+                className="item">{">="}89999</div>
             </div>
         </header>
     </>

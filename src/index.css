@@ -54,3 +54,17 @@ input::placeholder{
     padding: 10px;
     font-weight: bold;
 }
+
+
+/* productdetails css */
+
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img{
+    width: 350px;
+    height: 350px;
+}
